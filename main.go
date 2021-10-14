@@ -42,8 +42,8 @@ var (
 
 	awsEndpoint = "/2018-06-01/runtime"
 	environment = map[string]string{
-		"PATH":                   "/usr/local/bin:/usr/bin/:/bin:/opt/bin",
-		"LD_LIBRARY_PATH":        "/lib64:/usr/lib64:$LAMBDA_RUNTIME_DIR:$LAMBDA_RUNTIME_DIR/lib:$LAMBDA_TASK_ROOT:$LAMBDA_TASK_ROOT/lib:/opt/lib",
+		//		"PATH":                   "/usr/local/bin:/usr/bin/:/bin:/opt/bin",
+		//		"LD_LIBRARY_PATH":        "/lib64:/usr/lib64:$LAMBDA_RUNTIME_DIR:$LAMBDA_RUNTIME_DIR/lib:$LAMBDA_TASK_ROOT:$LAMBDA_TASK_ROOT/lib:/opt/lib",
 		"AWS_LAMBDA_RUNTIME_API": "127.0.0.1",
 
 		// Some dummy values
@@ -64,7 +64,7 @@ type Specification struct {
 	// Funtions deadline, seconds
 	FunctionTTL int64 `envconfig:"function_ttl" default:"10"`
 	// Lambda runtime API port for functions
-	InternalAPIport string `envconfig:"internal_api_port" default:"80"`
+	InternalAPIport string `envconfig:"internal_api_port" default:"8081"`
 	// Lambda API port to put function requests and get results
 	ExternalAPIport string `envconfig:"external_api_port" default:"8080"`
 
